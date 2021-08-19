@@ -1,15 +1,15 @@
-name: deploy-dashbooard
+name: deploy-dashboard
 
 on:
   push:
     branches:
       - "develop"
     paths:
-      - "packages/dashbooard/**"
+      - "packages/dashboard/**"
 
 defaults:
   run:
-    working-directory: packages/dashbooard
+    working-directory: packages/dashboard
 
 jobs:
   build:
@@ -28,6 +28,6 @@ jobs:
           aws-region: us-west-1
 
       - name: Copy files to the s3 website content bucket
-        run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/dashbooard/latest
+        run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/dashboard/latest
 
-      - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID}} --path "/dashbooard/latest/remoteEntry.js"
+      - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID}} --path "/dashboard/latest/remoteEntry.js"
