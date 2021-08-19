@@ -59,7 +59,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Header({ signedIn, onSignOut }) {
   const classes = useStyles();
   const [isSignedIn, setSignIn] = useSignin();
-  console.log('signed in header', isSignedIn);
 
   const onClick = () => {
     setSignIn(false);
@@ -79,7 +78,7 @@ export default function Header({ signedIn, onSignOut }) {
             color='inherit'
             noWrap
             component={RouterLink}
-            to='/'
+            to='/dashboard'
           >
             App
           </Typography>
