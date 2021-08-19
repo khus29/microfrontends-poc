@@ -78,7 +78,7 @@ export default function Header({ signedIn, onSignOut }) {
             color='inherit'
             noWrap
             component={RouterLink}
-            to='/'
+            to='/dashboard'
           >
             App
           </Typography>

@@ -1,5 +1,5 @@
 import { mount } from 'dashboard/DashboardApp';
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 export default () => {
   const ref = useRef(null);
